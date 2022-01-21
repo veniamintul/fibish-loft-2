@@ -1,0 +1,247 @@
+$containerWidth:1110px;
+$baseFontSize:16px;
+
+$gray:#F5F5F5;
+$blue: #F2F5F4;
+$black:#292929;
+$graydark:#666666;
+$red:#E01F3D;
+
+//bottom
+
+
+
+
+@import "layout";
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+
+
+@import"media";
+
+
+
+
+
+@import "componets/header";
+@import "componets/glavnaya";
+@import "componets/pochemu";
+@import "componets/shop";
+@import "componets/team";
+@import "componets/slider";
+@import "componets/feedback";
+@import "componets/video";
+@import "componets/zacaz";
+@import "componets/map";
+@import "componets/footer";
+@import "componets/paginator";
+@import "componets/figura";
+
+
+
+
+
+
+  
+ @media (max-width:1100px){
+  html{font-size: 14px;}
+  .container{max-width: 700px;
+  }
+ 
+}
+
+
+//тут все работает
+
+@media (max-width:768px)    {
+  html{font-size: 13px;}
+  .container{ 
+    max-width: 700px;
+    flex-direction: column;
+  }
+  .menu,.contacts{
+    display: none;
+
+  }
+
+  .gamburger{
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    right: 1rem;
+   
+ }
+
+ .header__mobile{
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  
+  min-width: 700px;
+ }
+  //.glavnaya__pictures{
+   // }
+
+  .container__glavnaya{
+    display: flex;
+    flex-direction: column-reverse;
+    min-width: 0;   //при адаптиве обнуляем мин ширину обертки
+    max-width: 450px;  //фиксимальную делаем меньше следующего медиа запроса
+    width: auto;
+    //position: relative;
+  }
+  .glavnaya__pictures{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //position: absolute;
+    margin-left: -1em;
+    height: 320px;
+    width: 320px;
+  }
+
+  .glavnaya__one{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //position: absolute;
+    margin-left: 15em;
+     
+  }
+  .glavnaya__text{
+    text-align: center;
+    transform: translate(-1em);
+    
+  }
+  .glavnaya__title{
+    text-align: center;
+    transform: translate(-3em);
+  }
+  .glavnaya__button{
+    margin-left: 6em;
+  }
+  .glavnaya__spisok{
+    opacity: 0;
+  }
+
+
+
+//начиная с этого пункта адаптив у меня перестает работать.Я пытался как в руководстве создать
+//дополнительный файл media.scss и через @include в разделах  feedback и  pochemu подключиться
+//и ничего увы
+
+
+
+
+
+  .pochemu{
+    display: flex;
+    min-width: 0;   //при адаптиве обнуляем мин ширину обертки
+    max-width: 450px;  //фиксимальную делаем меньше следующего медиа запроса
+    width: auto;
+    position: relative;
+    left: 1em;
+    background: #E01F3D;
+    
+  }
+  .pochemu__text{
+    text-align: center;
+    transform: translate(-1em);
+  }
+
+  .pochemu__title{
+    text-align: center;
+    margin-left: -85px;
+  }
+
+  .pochemu__item{
+    margin-right: 20px;
+  }
+
+  .feedback__headline{
+    text-align: center;
+    transform: translate(-1em);
+  
+  }
+
+  .feedback__contents{
+    display: flex;
+    flex-direction: column
+
+  
+  }
+
+   
+  .footer{
+    background: #E01F3D;  //футер такого цвета просто для наглядности
+  }
+}
+
+
+
+
+//тут все работает
+
+@media (max-width:480px){
+ html{font-size: 12px;}
+  .header{
+    margin-left: 0;
+  }
+ .container{ 
+   max-width: 480px;
+   min-width: 320px;
+  flex-direction: column;
+ }
+ .menu,.contacts{
+  display: none;
+}
+
+.gamburger{
+  display: block;
+  position: relative;
+  right: 4rem;
+ 
+}
+
+.header__mobile{
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  
+  min-width: 450px;
+}
+
+
+.container__glavnaya{
+  flex-direction: column-reverse; 
+  min-width: 0;   //при адаптиве обнуляем мин ширину обертки
+  max-width: 200px; 
+  width: auto;  
+}
+
+.glavnaya__pictures{
+  width: 100%;
+}
+ 
+.glavnaya__spisok{
+  opacity: 0;
+}
+
+
+
+//после раздела glavnaya перестает работать
+
+
+.footer{
+  background: #E01F3D;    //футер такого цвета просто для наглядности
+}
+
+
+
+}
+
